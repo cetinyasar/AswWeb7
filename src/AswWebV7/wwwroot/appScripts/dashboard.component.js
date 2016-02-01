@@ -8,34 +8,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var router_1 = require('angular2/router');
-var hero_service_1 = require('./hero.service');
+//import {Hero} from './hero';
+//import {HeroService} from './hero.service';
 var DashboardComponent = (function () {
-    function DashboardComponent(_heroService, _router) {
-        this._heroService = _heroService;
-        this._router = _router;
-        this.heroes = [];
+    function DashboardComponent() {
     }
+    //public heroes: Hero[] = [];
+    //constructor(private _heroService: HeroService, private _router: Router) { }
     DashboardComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
-    };
-    DashboardComponent.prototype.gotoDetail = function (hero) {
-        this._router.navigate(['HeroDetail', { id: hero.id }]);
+        //this._heroService.getHeroes().then(heroes => this.heroes = heroes.slice(1,5));
     };
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'my-dashboard',
-            template: '<h3>Top Heroes</h3>' +
-                '<div class="grid grid-pad">' +
-                '<div *ngFor="#hero of heroes" class="col-1-4" (click)="gotoDetail(hero)">' +
-                '<div class="module hero">' +
-                '<h4>{{hero.name}}</h4>' +
-                '</div>' +
-                '</div>' +
-                '</div>'
+            template: '<h1>Asw Web V3</h1>'
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
+        __metadata('design:paramtypes', [])
     ], DashboardComponent);
     return DashboardComponent;
 })();

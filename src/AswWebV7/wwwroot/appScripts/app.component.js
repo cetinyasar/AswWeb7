@@ -9,34 +9,54 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
+//import {HeroesComponent} from './heroes.component';
+//import {HeroDetailComponent} from './hero-detail.component';
 var dashboard_component_1 = require('./dashboard.component');
-var hero_service_1 = require('./hero.service');
+//import {HeroService} from './hero.service';
 var va_onceki_calismalar_1 = require('./veri-analiz/va.onceki.calismalar');
+var va_yeni_calisma_1 = require('./veri-analiz/va.yeni.calisma');
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Tour of Heroes';
+        this.title = 'Asw';
     }
+    AppComponent.prototype.ngOnInit = function () {
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        $("#menu-toggle-2").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled-2");
+            $('#menu ul').hide();
+        });
+        this.initMenu();
+    };
+    AppComponent.prototype.initMenu = function () {
+        $('#menu ul').hide();
+        $('#menu ul').children('.current').parent().show();
+        $('#menu li a').click(function () {
+            var checkElement = $(this).next();
+            if ((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                return false;
+            }
+            if ((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                $('#menu ul:visible').slideUp('normal');
+                checkElement.slideDown('normal');
+                return false;
+            }
+        });
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: '../templates/ana-sayfa.html',
-            //template: `
-            //  <h1>{{title}}</h1>
-            //  <a [routerLink]="['Dashboard']">Dashboard</a>
-            //  <a [routerLink]="['Heroes']">Heroes</a>
-            //  <router-outlet></router-outlet>
-            //`,
             directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [hero_service_1.HeroService]
         }),
         router_1.RouteConfig([
             // {path: '/', redirectTo: ['Dashboard'] },
             { path: '/dashboard', name: 'Dashboard', component: dashboard_component_1.DashboardComponent, useAsDefault: true },
             { path: '/vaoncekicalisma', name: 'VaOncekiCalisma', component: va_onceki_calismalar_1.OncekiCalismalarComp },
-            { path: '/heroes', name: 'Heroes', component: heroes_component_1.HeroesComponent },
-            { path: '/detail/:id', name: 'HeroDetail', component: hero_detail_component_1.HeroDetailComponent }
+            { path: '/vayenicalisma', name: 'VaYeniCalisma', component: va_yeni_calisma_1.YeniCalismaComp },
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

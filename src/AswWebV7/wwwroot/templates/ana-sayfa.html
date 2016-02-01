@@ -1,39 +1,139 @@
-﻿<nav class="navbar navbar-default no-margin">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header fixed-brand">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" id="menu-toggle">
-            <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+﻿<div id="navbar" class="navbar navbar-default">
+    <script type="text/javascript">
+        try { ace.settings.check('navbar', 'fixed') } catch (e) { }
+    </script>
+    <div class="navbar-container" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+            <span class="sr-only">Toggle sidebar</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">{{Baslik}}</a>
-    </div><!-- navbar-header-->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li class="active"><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
-        </ul>
-    </div><!-- bs-example-navbar-collapse-1 -->
-</nav>
-<div id="wrapper">
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+        <div class="navbar-header pull-left">
+            <a href="index.html" class="navbar-brand">
+                <small>
+                    <i class="fa fa-leaf"></i>
+                    Asw v4
+                </small>
+            </a>
+        </div>
+    </div><!-- /.navbar-container -->
+</div>
+
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+    </script>
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
+        <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                <button class="btn btn-success">
+                    <i class="ace-icon fa fa-signal"></i>
+                </button>
+                <button class="btn btn-info">
+                    <i class="ace-icon fa fa-pencil"></i>
+                </button>
+                <button class="btn btn-warning">
+                    <i class="ace-icon fa fa-users"></i>
+                </button>
+                <button class="btn btn-danger">
+                    <i class="ace-icon fa fa-cogs"></i>
+                </button>
+            </div>
+            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                <span class="btn btn-success"></span>
+                <span class="btn btn-info"></span>
+                <span class="btn btn-warning"></span>
+                <span class="btn btn-danger"></span>
+            </div>
+        </div><!-- /.sidebar-shortcuts -->
+        <ul class="nav nav-list">
             <li class="active">
-                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x "></i></span> Veri Analiz</a>
-                <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                    <li><a [routerLink]="['VaOncekiCalisma']">Önceki Çalışmalar</a></li>
-                    <li><a [routerLink]="['Heroes']">Yeni Çalışma</a></li>
+                <a href="index.html">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text"> Ana Panel </span>
+                </a>
+                <b class="arrow"></b>
+            </li>
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-desktop"></i>
+                    <span class="menu-text">
+                        Veri Analiz
+                    </span>
+                    <b class="arrow fa fa-angle-down"></b>
+                </a>
+                <b class="arrow"></b>
+                <ul class="submenu">
+                    <li class="">
+                        <a [routerLink]="['VaOncekiCalisma']">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Kayıtlı Çalışmalar
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['VaYeniCalisma']">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Yeni Çalışma
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
                 </ul>
             </li>
-        </ul>
-    </div><!-- /#sidebar-wrapper -->
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid xyz">
-            <div class="row">
-                <div class="col-lg-12">
-                    <router-outlet></router-outlet>
-                </div>
+        </ul><!-- /.nav-list -->
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+        </script>
+    </div>
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <script type="text/javascript">
+                    try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+                </script>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="/">Ana Panel</a>
+                    </li>
+                    <li class="active">Veri Analiz</li>
+                </ul>
+                <!--<div class="nav-search" id="nav-search">
+                    <form class="form-search">
+                        <span class="input-icon">
+                            <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                            <i class="ace-icon fa fa-search nav-search-icon"></i>
+                        </span>
+                    </form>
+                </div>-->
+            </div>
+
+            <div class="page-content">
+                <router-outlet></router-outlet>
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <span class="bigger-120">
+                    <span class="blue bolder">Ada</span>
+                    Yazılım &copy; 2016
+                </span>
+                &nbsp; &nbsp;
             </div>
         </div>
     </div>
-    <!-- /#page-content-wrapper -->
-</div>
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->

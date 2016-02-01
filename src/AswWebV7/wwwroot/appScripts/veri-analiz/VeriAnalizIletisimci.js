@@ -15,6 +15,10 @@ var VeriAnalizIletisimci = (function () {
     VeriAnalizIletisimci.prototype.kullaniciKayitliVeriAnalizCalismalariniAl = function () {
         return Promise.resolve(mock_analiz_calismalari_1.AnalizCalismalari);
     };
+    VeriAnalizIletisimci.prototype.IslenmisVeriAl = function () {
+        console.log("sssss");
+        return Promise.resolve(mock_analiz_calismalari_1.AnalizCalismasi);
+    };
     VeriAnalizIletisimci = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
