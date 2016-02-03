@@ -1,4 +1,4 @@
-﻿import {Component, OnInit, AfterContentChecked} from 'angular2/core';
+﻿import {Component, OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {VeriAnalizIletisimci} from './VeriAnalizIletisimci'
 import {AnalizCalisma} from './AnalizCalisma'
@@ -28,7 +28,7 @@ declare var $: any;
     '</table>',
     styleUrls: ['../style/table.css']
 })
-export class OncekiCalismalarComp implements OnInit, AfterContentChecked {
+export class OncekiCalismalarComp implements OnInit {
     public veriAnalizCalismalari: AnalizCalisma[];
 
     constructor(private _vaIletisimci: VeriAnalizIletisimci, private _router: Router) {}
@@ -37,71 +37,7 @@ export class OncekiCalismalarComp implements OnInit, AfterContentChecked {
         this._vaIletisimci.kullaniciKayitliVeriAnalizCalismalariniAl().then(va => this.veriAnalizCalismalari = va);
     }
 
-    ngAfterContentChecked() {
-        //if ($("input.flat")[0]) {
-        //    $(document).ready(function () {
-        //        $('input.flat').iCheck({
-        //            checkboxClass: 'icheckbox_flat-green',
-        //            radioClass: 'iradio_flat-green'
-        //        });
-        //    });
-        //}
-
-        //$('table input').on('ifChecked', function () {
-        //    this.check_state = '';
-        //    $(this).parent().parent().parent().addClass('selected');
-        //    this.countChecked();
-        //});
-        //$('table input').on('ifUnchecked', function () {
-        //    this.check_state = '';
-        //    $(this).parent().parent().parent().removeClass('selected');
-        //    this.countChecked();
-        //});
-        
-        //$('.bulk_action input').on('ifChecked', function () {
-        //    this.check_state = '';
-        //    $(this).parent().parent().parent().addClass('selected');
-        //    this.countChecked();
-        //});
-        //$('.bulk_action input').on('ifUnchecked', function () {
-        //    this.check_state = '';
-        //    $(this).parent().parent().parent().removeClass('selected');
-        //    this.countChecked();
-        //});
-        //$('.bulk_action input#check-all').on('ifChecked', function () {
-        //    this.check_state = 'check_all';
-        //    this.countChecked();
-        //});
-        //$('.bulk_action input#check-all').on('ifUnchecked', function () {
-        //    this.check_state = 'uncheck_all';
-        //    this.countChecked();
-        //});
-
-    }
-
-    check_state = '';
     ngOnInit() {
-        //alert("on init");
         this.kullaniciKayitliVeriAnalizCalismalariniAl();
-       
     }
-
-    //countChecked() {
-    //    if (this.check_state == 'check_all') {
-    //        $(".bulk_action input[name='table_records']").iCheck('check');
-    //    }
-    //    if (this.check_state == 'uncheck_all') {
-    //        $(".bulk_action input[name='table_records']").iCheck('uncheck');
-    //    }7
-    //    var n = $(".bulk_action input[name='table_records']:checked").length;
-    //    if (n > 0) {
-    //        $('.column-title').hide();
-    //        $('.bulk-actions').show();
-    //        $('.action-cnt').html(n + ' Records Selected');
-    //    } else {
-    //        $('.column-title').show();
-    //        $('.bulk-actions').hide();
-    //    }
-    //}
-
 }

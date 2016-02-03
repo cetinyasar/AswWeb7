@@ -2,13 +2,14 @@
 <html>
 
 <head>
+    
     <script>document.write('<base href="' + document.location + '" />');</script>
-    <link href="style/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet" />
-    <!--<link href="style/sidebar.css" rel="stylesheet" />-->
-    <link href="style/font-awesome-4.5.0/css/font-awesome.css" rel="stylesheet" />
-    <link href="style/google/fonts.googleapis.com.css" rel="stylesheet" />
-    <!--<link href="style/icheck/flat/green.css" rel="stylesheet" />-->
-    <link href="style/ace.min.css" rel="stylesheet" />
+    <link href="style/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet"/>
+    <!--<link href="style/sidebar.css" rel="stylesheet"/>-->
+    <link href="style/font-awesome-4.5.0/css/font-awesome.css" rel="stylesheet"/>
+    <link href="style/google/fonts.googleapis.com.css" rel="stylesheet"/>
+    <!--<link href="style/icheck/flat/green.css" rel="stylesheet"/>-->
+    <link href="style/ace.min.css" rel="stylesheet"/>
     <!-- IE required polyfills, in this exact order -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.16/system-polyfills.js"></script>
@@ -23,7 +24,6 @@
     <script src="style/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
     <script>
         System.config({
-
             packages: {
                 appScripts: {
                     defaultExtension: 'js'
@@ -31,7 +31,7 @@
             }
         });
         System.import('appScripts/main')
-              .then(null, console.error.bind(console));
+            .then(null, console.error.bind(console));
     </script>
 </head>
 <body class="no-skin">

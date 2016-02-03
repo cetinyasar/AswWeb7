@@ -1,14 +1,11 @@
-﻿import { AnalizCalisma, Calisma } from '../veri-analiz/AnalizCalisma'
-
-export var AnalizCalismalari: AnalizCalisma[] = [
+exports.AnalizCalismalari = [
     { "Id": 1, "CalismaAdi": "Çalışma 4", "Tarih": new Date() },
     { "Id": 2, "CalismaAdi": "Çalışma 4", "Tarih": new Date() },
     { "Id": 3, "CalismaAdi": "Çalışma 4", "Tarih": new Date() },
     { "Id": 4, "CalismaAdi": "Çalışma 4", "Tarih": new Date() },
     { "Id": 5, "CalismaAdi": "Çalışma 4", "Tarih": new Date() }
 ];
-
-export var AnalizCalismasi: Calisma = {
+exports.AnalizCalismasi = {
     Aciklama: "Ham Veri",
     VeriIstekSonuc: {
         VeriId: "0b77d17d-aa16-4bea-af22-67ae34572a4a",
@@ -1581,4 +1578,5 @@ export var AnalizCalismasi: Calisma = {
     },
     CalismaAgaci: null,
     CalismaDali: null
-}
+};
+//# sourceMappingURL=mock-analiz-calismalari.js.map
