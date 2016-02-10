@@ -1,0 +1,85 @@
+﻿<div class="widget-container-col width-100" >
+    <div class="widget-box">
+        <div class="widget-header">
+            <h5 class="widget-title">Kolon Ekle</h5>
+
+            <div class="widget-toolbar">
+                <a href="#" data-action="collapse">
+                    <i class="1 ace-icon fa fa-chevron-up bigger-125"></i>
+                </a>
+            </div>
+
+            <div class="widget-toolbar no-border">
+                <button class="btn btn-xs btn-light bigger">
+                    <i class="ace-icon fa fa-plus-circle"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="widget-body">
+            <div class="widget-main">
+                <div class="row">
+                    <div class="col-sm-12" style="padding: 0">
+
+                        <!--<div class="profile-user-info profile-user-info-striped">
+                            <div *ngFor="#islemci of Islemciler">
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name">
+                                        <div class="checkbox" style="margin-top: 1px; margin-bottom: 1px">
+                                            <label>
+                                                <input name="form-field-checkbox" type="checkbox" class="ace">
+                                                <span class="lbl"> İşlemci </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="profile-info-value">
+                                        {{islemci.SinifAdi}}
+                                    </div>
+                                </div>
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name"> Ön Ek </div>
+                                    <div class="profile-info-value">
+                                        {{islemci.OnEk}}
+                                    </div>
+                                </div>
+                                <div class="space-4"></div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="col-sm-12" style="padding: 0">
+                        <div class="profile-user-info profile-user-info-striped">
+
+                            <div class="padding-4 scrollable" data-size="300">
+                                <div class="content" >
+                                    <div *ngFor="#kolonBilgi of YeniKolonBilgisi">
+                                        <div class="profile-info-row col-sm-12" style="margin-bottom: 8px">
+                                            <div class="form-group" style="padding: 0;">
+                                                <div class="col-sm-3" style="padding: 0">
+                                                    <input type="text" placeholder="Kolon Adı" class="col-sm-12">
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <textarea rows="4" class="col-sm-12"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget-toolbox padding-8 clearfix">
+                <button class="btn btn-xs btn-danger pull-left">
+                    <i class="ace-icon fa fa-times"></i>
+                    <span class="bigger-110">İptal</span>
+                </button>
+
+                <button class="btn btn-xs btn-success pull-right">
+                    <span class="bigger-110">Tamam</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

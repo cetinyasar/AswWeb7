@@ -1,5 +1,7 @@
 ﻿import {Injectable} from 'angular2/core';
 import {AnalizCalismalari, AnalizCalismasi} from '../mock/mock-analiz-calismalari';
+import {Islemciler} from '../mock/mock-islemciler'
+
 
 @Injectable()
 export class VeriAnalizIletisimci {
@@ -8,8 +10,11 @@ export class VeriAnalizIletisimci {
     }
 
     IslenmisVeriAl() {
-        console.log("sssss");
         return Promise.resolve(AnalizCalismasi);
+    }
+
+    KullanilabilecekIslemcileriAl() {
+        return Promise.resolve(Islemciler);
     }
 
 }
