@@ -11,6 +11,7 @@ import {ModalConfig} from '../lib/angular2-modal/models/ModalConfig';
 import {Modal} from '../lib/angular2-modal/providers/Modal';
 import {ICustomModal} from '../lib/angular2-modal/models/ICustomModal';
 import {KolonEklePopup} from './KolonEklePopup'
+import {VeriGruplaPopup} from './VeriGruplaPopup'
 
 declare var $: any;
 @Component({
@@ -53,6 +54,26 @@ export class YeniCalismaComp implements OnInit {
             <any>KolonEklePopup,
              bindings,
              new ModalConfig("lg", true, 27));
+
+        dialog.then((resultPromise) => {
+            return resultPromise.result.then((result) => {
+                this.lastModalResult = result;
+            }, () => this.lastModalResult = 'Rejected!');
+        });
+    }
+
+    veriGrupla() {
+        let dialog: Promise<ModalDialogInstance>;
+
+        let bindings = Injector.resolve([
+            //provide(ICustomModal, { useValue: new AdditionCalculateWindowData(2, 3) })
+            provide(ICustomModal, {})
+        ]);
+
+        dialog = this.modal.open(
+            <any>VeriGruplaPopup,
+            bindings,
+            new ModalConfig("lg", true, 27));
 
         dialog.then((resultPromise) => {
             return resultPromise.result.then((result) => {

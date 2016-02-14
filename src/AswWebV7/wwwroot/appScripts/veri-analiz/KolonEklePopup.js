@@ -9,13 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var common_1 = require('angular2/common');
+var Modal_1 = require('../lib/angular2-modal/providers/Modal');
 var ModalDialogInstance_1 = require('../lib/angular2-modal/models/ModalDialogInstance');
-//import {MevcutIslemci, EklenecekIslemci, GerekliKolonBilgileri} from './MevcutIslemci'
+var ICustomModal_1 = require('../lib/angular2-modal/models/ICustomModal');
 var VeriAnalizIletisimci_1 = require('./VeriAnalizIletisimci');
 var YeniKolonBilgisi_1 = require('./YeniKolonBilgisi');
+var IslemciSecPopup_1 = require('./IslemciSecPopup');
+var ModalConfig_1 = require('../lib/angular2-modal/models/ModalConfig');
 var KolonEklePopup = (function () {
-    function KolonEklePopup(_vaIletisimci, dialog) {
+    function KolonEklePopup(_vaIletisimci, dialog, injector, _renderer, modal) {
         this._vaIletisimci = _vaIletisimci;
+        this.injector = injector;
+        this._renderer = _renderer;
+        this.modal = modal;
         this.dialog = dialog;
         this.YeniKolonBilgisi = new Array();
     }
@@ -25,6 +31,21 @@ var KolonEklePopup = (function () {
     KolonEklePopup.prototype.TamamTiklandi = function () {
         console.log("tamam tıklandı");
         this.dialog.close();
+    };
+    KolonEklePopup.prototype.IslemciSec = function () {
+        //var popup = new IslemciSecPopup(this._vaIletisimci, this.dialog);
+        var _this = this;
+        var dialog;
+        var bindings = core_1.Injector.resolve([
+            //provide(ICustomModal, { useValue: new AdditionCalculateWindowData(2, 3) })
+            core_1.provide(ICustomModal_1.ICustomModal, {})
+        ]);
+        dialog = this.modal.open(IslemciSecPopup_1.IslemciSecPopup, bindings, new ModalConfig_1.ModalConfig("lg", true, 27));
+        dialog.then(function (resultPromise) {
+            return resultPromise.result.then(function (result) {
+                _this.lastModalResult = result;
+            }, function () { return _this.lastModalResult = 'Rejected!'; });
+        });
     };
     KolonEklePopup.prototype.ngOnInit = function () {
         var _this = this;
@@ -37,18 +58,16 @@ var KolonEklePopup = (function () {
         this._vaIletisimci.KullanilabilecekIslemcileriAl().then(function (va) { return _this.Islemciler = va; });
         this.YeniKolonBilgisi = new Array();
         this.YeniKolonBilgisi.push(new YeniKolonBilgisi_1.YeniKolonBilgisi());
-        this.YeniKolonBilgisi.push(new YeniKolonBilgisi_1.YeniKolonBilgisi());
-        this.YeniKolonBilgisi.push(new YeniKolonBilgisi_1.YeniKolonBilgisi());
-        this.YeniKolonBilgisi.push(new YeniKolonBilgisi_1.YeniKolonBilgisi());
     };
     KolonEklePopup = __decorate([
         core_1.Component({
             selector: 'modal-content',
+            providers: [Modal_1.Modal],
             directives: [common_1.CORE_DIRECTIVES],
             styles: [],
             templateUrl: './templates/KolonEklePopup.html'
         }), 
-        __metadata('design:paramtypes', [VeriAnalizIletisimci_1.VeriAnalizIletisimci, ModalDialogInstance_1.ModalDialogInstance])
+        __metadata('design:paramtypes', [VeriAnalizIletisimci_1.VeriAnalizIletisimci, ModalDialogInstance_1.ModalDialogInstance, core_1.Injector, core_1.Renderer, Modal_1.Modal])
     ], KolonEklePopup);
     return KolonEklePopup;
 })();
