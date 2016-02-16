@@ -24,7 +24,7 @@ declare var $: any;
     }
   `]
 })
-export class YeniCalismaComp implements OnInit {
+export class YeniCalismaComponent implements OnInit {
     public calisma: Calisma;
     public lastModalResult: string;
 

@@ -18,7 +18,6 @@ import {DragulaService} from '../lib/angular2-dragula/providers/dragula.provider
       <div class='container' [dragula]='"first-bag"'>
         <div>This is the default use case. You only need to specify the containers you want to use</div>
         <div>More interactive use cases lie ahead</div>
-        <div>Make sure to check out the <a href='https://github.com/bevacqua/dragula#readme'>documentation on GitHub!</a></div>
       </div>
     </div>
     <pre>
@@ -31,8 +30,9 @@ import {DragulaService} from '../lib/angular2-dragula/providers/dragula.provider
   `
 })
 export class Kolonlar {
-    public firstBag = [];
     constructor() {
         console.log("Kolonlar constructor");
     }
 }
+
+export const KOLONLAR: any[] = [Kolonlar];

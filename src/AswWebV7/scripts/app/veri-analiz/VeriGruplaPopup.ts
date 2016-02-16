@@ -1,18 +1,20 @@
-﻿import {Component, Input, OnInit} from 'angular2/core';
-import {CORE_DIRECTIVES} from 'angular2/common';
+﻿import {Component, Input, OnInit, ViewEncapsulation} from 'angular2/core';
+//import {CORE_DIRECTIVES} from 'angular2/common';
 
 import {Modal} from '../lib/angular2-modal/providers/Modal';
 import {ModalDialogInstance} from '../lib/angular2-modal/models/ModalDialogInstance';
 import {ICustomModal, ICustomModalComponent} from '../lib/angular2-modal/models/ICustomModal';
 
 import {VeriAnalizIletisimci} from './VeriAnalizIletisimci'
-import {Kolonlar} from './Kolonlar'
+import {KOLONLAR} from './Kolonlar'
 
 declare var $: any;
 
 @Component({
     selector: 'modal-content',
-    directives: [CORE_DIRECTIVES, Kolonlar],
+    directives: [KOLONLAR],
+    encapsulation: ViewEncapsulation.None,
+    //directives: [CORE_DIRECTIVES, Kolonlar],
     templateUrl: './templates/VeriGruplaPopup.html'
 
 })

@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {DashboardComponent} from './dashboard.component';
 import {OncekiCalismalarComp} from './veri-analiz/va.onceki.calismalar';
-import {YeniCalismaComp} from './veri-analiz/va.yeni.calisma';
+import {YeniCalismaComponent} from './veri-analiz/YeniCalismaComponent';
 
 declare var $: any;
 
@@ -14,7 +14,7 @@ declare var $: any;
 @RouteConfig([
     { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
     { path: '/vaoncekicalisma', name: 'VaOncekiCalisma', component: OncekiCalismalarComp },
-    { path: '/vayenicalisma', name: 'VaYeniCalisma', component: YeniCalismaComp },
+    { path: '/vayenicalisma', name: 'VaYeniCalisma', component: YeniCalismaComponent },
 ])
 
 

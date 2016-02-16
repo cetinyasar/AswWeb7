@@ -11,7 +11,7 @@ var core_1 = require('angular2/core');
 var router_1 = require('angular2/router');
 var dashboard_component_1 = require('./dashboard.component');
 var va_onceki_calismalar_1 = require('./veri-analiz/va.onceki.calismalar');
-var va_yeni_calisma_1 = require('./veri-analiz/va.yeni.calisma');
+var YeniCalismaComponent_1 = require('./veri-analiz/YeniCalismaComponent');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Asw';
@@ -37,7 +37,7 @@ var AppComponent = (function () {
         router_1.RouteConfig([
             { path: '/dashboard', name: 'Dashboard', component: dashboard_component_1.DashboardComponent, useAsDefault: true },
             { path: '/vaoncekicalisma', name: 'VaOncekiCalisma', component: va_onceki_calismalar_1.OncekiCalismalarComp },
-            { path: '/vayenicalisma', name: 'VaYeniCalisma', component: va_yeni_calisma_1.YeniCalismaComp },
+            { path: '/vayenicalisma', name: 'VaYeniCalisma', component: YeniCalismaComponent_1.YeniCalismaComponent },
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
