@@ -35,7 +35,7 @@ var AppComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES],
         }),
         router_1.RouteConfig([
-            { path: '/dashboard', name: 'Dashboard', component: dashboard_component_1.DashboardComponent, useAsDefault: true },
+            { path: '/dashboard', name: 'Dashboard', component: dashboard_component_1.DashboardComponent },
             { path: '/vaoncekicalisma', name: 'VaOncekiCalisma', component: va_onceki_calismalar_1.OncekiCalismalarComp },
             { path: '/vayenicalisma', name: 'VaYeniCalisma', component: YeniCalismaComponent_1.YeniCalismaComponent },
         ]), 

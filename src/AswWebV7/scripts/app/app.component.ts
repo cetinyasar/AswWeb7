@@ -12,7 +12,7 @@ declare var $: any;
     directives: [ROUTER_DIRECTIVES],
 })
 @RouteConfig([
-    { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
+    { path: '/dashboard', name: 'Dashboard', component: DashboardComponent },
     { path: '/vaoncekicalisma', name: 'VaOncekiCalisma', component: OncekiCalismalarComp },
     { path: '/vayenicalisma', name: 'VaYeniCalisma', component: YeniCalismaComponent },
 ])
