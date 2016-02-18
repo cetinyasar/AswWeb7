@@ -33,11 +33,9 @@ var KolonEklePopup = (function () {
         this.dialog.close();
     };
     KolonEklePopup.prototype.IslemciSec = function () {
-        //var popup = new IslemciSecPopup(this._vaIletisimci, this.dialog);
         var _this = this;
         var dialog;
         var bindings = core_1.Injector.resolve([
-            //provide(ICustomModal, { useValue: new AdditionCalculateWindowData(2, 3) })
             core_1.provide(ICustomModal_1.ICustomModal, {})
         ]);
         dialog = this.modal.open(IslemciSecPopup_1.IslemciSecPopup, bindings, new ModalConfig_1.ModalConfig("lg", true, 27));

@@ -15,6 +15,7 @@ var Modal_1 = require('../lib/angular2-modal/providers/Modal');
 var ICustomModal_1 = require('../lib/angular2-modal/models/ICustomModal');
 var KolonEklePopup_1 = require('./KolonEklePopup');
 var VeriGruplaPopup_1 = require('./VeriGruplaPopup');
+var VeriFiltrelePopup_1 = require('./VeriFiltrelePopup');
 var YeniCalismaComponent = (function () {
     function YeniCalismaComponent(_vaIletisimci, modal, elementRef, injector, _renderer) {
         this._vaIletisimci = _vaIletisimci;
@@ -53,6 +54,20 @@ var YeniCalismaComponent = (function () {
             core_1.provide(ICustomModal_1.ICustomModal, {})
         ]);
         dialog = this.modal.open(VeriGruplaPopup_1.VeriGruplaPopup, bindings, new ModalConfig_1.ModalConfig("lg", true, 27));
+        dialog.then(function (resultPromise) {
+            return resultPromise.result.then(function (result) {
+                _this.lastModalResult = result;
+            }, function () { return _this.lastModalResult = 'Rejected!'; });
+        });
+    };
+    YeniCalismaComponent.prototype.veriFiltrele = function () {
+        var _this = this;
+        var dialog;
+        var bindings = core_1.Injector.resolve([
+            //provide(ICustomModal, { useValue: new AdditionCalculateWindowData(2, 3) })
+            core_1.provide(ICustomModal_1.ICustomModal, {})
+        ]);
+        dialog = this.modal.open(VeriFiltrelePopup_1.VeriFiltrelePopup, bindings, new ModalConfig_1.ModalConfig("lg", true, 27));
         dialog.then(function (resultPromise) {
             return resultPromise.result.then(function (result) {
                 _this.lastModalResult = result;

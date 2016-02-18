@@ -45,12 +45,10 @@ export class KolonEklePopup implements OnInit, ICustomModalComponent {
     }
 
     IslemciSec(): void {
-        //var popup = new IslemciSecPopup(this._vaIletisimci, this.dialog);
         
         let dialog: Promise<ModalDialogInstance>;
 
         let bindings = Injector.resolve([
-            //provide(ICustomModal, { useValue: new AdditionCalculateWindowData(2, 3) })
             provide(ICustomModal, {})
         ]);
 
